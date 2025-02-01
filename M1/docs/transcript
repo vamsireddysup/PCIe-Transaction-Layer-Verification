@@ -1,0 +1,2279 @@
+# //  Questa Sim-64
+# //  Version 2021.3_1 linux_x86_64 Aug 15 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading project ece593_alu
+ls
+# ece593_alu.cr.mti
+# ece593_alu.mpf
+# ece593_alu.sv
+# ece593_alu_tb.sv
+# transcript
+# vsim.wlf
+# wave.do
+# work
+cd /home/allada/common/Documents/M1
+# reading /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/../modelsim.ini
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# test_lib.sv
+# top_tb.sv
+# transcript
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:26:12 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/hdd2/home/sreeniv/src" top_tb.sv 
+# ** Error: (vlog-13053) top_tb.sv(1): near "'i": Illegal base specifier in numeric constant.
+# ** Error: (vlog-13069) top_tb.sv(1): near "'i": syntax error, unexpected BASE.
+# End time: 23:26:12 on Jan 30,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/hdd2/home/sreeniv/src top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:31:33 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13053) top_tb.sv(1): near "'i": Illegal base specifier in numeric constant.
+# ** Error: (vlog-13069) top_tb.sv(1): near "'i": syntax error, unexpected BASE.
+# End time: 23:31:34 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:32:31 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Note: (vlog-2286) top_tb.sv(1): Using implicit +incdir+/pkgs/mentor/questa/2021.3_1/questasim/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+# -- Compiling package uvm_pkg (uvm-1.1d Built-in)
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(30): near "parameter": syntax error, unexpected parameter.
+# ** Error (suppressible): ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(80): (vlog-2388) 'aclk' already declared in this scope (pcie_tl) at pcie_tl.sv(51).
+# ** Error (suppressible): ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(80): (vlog-2388) 'arst' already declared in this scope (pcie_tl) at pcie_tl.sv(51).
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(116): near "input": syntax error, unexpected input, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(121): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(125): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(126): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(129): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(133): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(136): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(136): (vlog-2730) Undefined variable: 'S_READ'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(141): near "write_register": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(143): (vlog-2730) Undefined variable: 'S_REG_READ'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(147): (vlog-2730) Undefined variable: 'S_LINK_TRAINING'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(207): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(207): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(24): (vlog-2730) Undefined variable: 'rx_data_i'.
+# ** Error: pcie_tl.sv(24): (vlog-13294) Identifier must be declared with a port mode: rx_data_i.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) top_tb.sv(49): near ".": syntax error, unexpected '.', expecting ')'.
+# ** Warning: (vlog-2292) An included file is associated with a closed UVM package, but no closed UVM package was imported
+# End time: 23:32:33 on Jan 30,2025, Elapsed time: 0:00:02
+# Errors: 22, Warnings: 1
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:37:37 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: top_tb.sv(1): Cannot find `include file "uvm_pkg.sv" in directories:
+#     /home/allada/common/Documents/M1, /pkgs/mentor/questa/2021.3_1/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src
+# ** Error (suppressible): ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(80): (vlog-2388) 'aclk' already declared in this scope (pcie_tl) at pcie_tl.sv(51).
+# ** Error (suppressible): ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(80): (vlog-2388) 'arst' already declared in this scope (pcie_tl) at pcie_tl.sv(51).
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(116): near "input": syntax error, unexpected input, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(121): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(125): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(126): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(129): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(133): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(136): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(136): (vlog-2730) Undefined variable: 'S_READ'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(141): near "write_register": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(207): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(207): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(24): (vlog-2730) Undefined variable: 'rx_data_i'.
+# ** Error: pcie_tl.sv(24): (vlog-13294) Identifier must be declared with a port mode: rx_data_i.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:37:38 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 21, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:41:22 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error (suppressible): ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(80): (vlog-2388) 'aclk' already declared in this scope (pcie_tl) at pcie_tl.sv(51).
+# ** Error (suppressible): ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(80): (vlog-2388) 'arst' already declared in this scope (pcie_tl) at pcie_tl.sv(51).
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(116): near "input": syntax error, unexpected input, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(121): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(125): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(126): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(129): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(133): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(136): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(136): (vlog-2730) Undefined variable: 'S_READ'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(141): near "write_register": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(207): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(207): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(24): (vlog-2730) Undefined variable: 'rx_data_i'.
+# ** Error: pcie_tl.sv(24): (vlog-13294) Identifier must be declared with a port mode: rx_data_i.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:41:22 on Jan 30,2025, Elapsed time: 0:00:00
+# Errors: 20, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:46:34 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(117): near "input": syntax error, unexpected input, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(122): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(126): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(127): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(130): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(134): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(137): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(137): (vlog-2730) Undefined variable: 'S_READ'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(142): near "write_register": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(208): (vlog-2730) Undefined variable: 'state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(208): (vlog-2730) Undefined variable: 'n_state'.
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(24): (vlog-2730) Undefined variable: 'rx_data_i'.
+# ** Error: pcie_tl.sv(24): (vlog-13294) Identifier must be declared with a port mode: rx_data_i.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:46:35 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 18, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:47:41 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(137): (vlog-2730) Undefined variable: 'S_READ'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(142): near "write_register": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:47:41 on Jan 30,2025, Elapsed time: 0:00:00
+# Errors: 7, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:49:14 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(3)
+# ** at pcie_tl.sv(142): near "write_register": syntax error, unexpected IDENTIFIER, expecting ';'.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:49:15 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 6, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:49:38 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(3): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(12): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(4)
+# ** at axi_intf.sv(14): near "reg": syntax error, unexpected reg, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER or '='.
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:49:38 on Jan 30,2025, Elapsed time: 0:00:00
+# Errors: 5, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:52:28 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:52:28 on Jan 30,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:53:24 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): (vlog-2163) Macro `uvm_component_utils is undefined.
+# ** Error: (vlog-13069) ** while parsing file included at top_tb.sv(5)
+# ** at test_lib.sv(2): near "(": syntax error, unexpected '(', expecting function or task.
+# End time: 23:53:24 on Jan 30,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:54:22 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13069) top_tb.sv(49): near ".": syntax error, unexpected '.', expecting ')'.
+# End time: 23:54:23 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:55:30 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13069) top_tb.sv(80): near ".": syntax error, unexpected '.', expecting ')'.
+# End time: 23:55:31 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:56:02 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: (vlog-13069) top_tb.sv(104): near ")": syntax error, unexpected ')', expecting .* or '.'.
+# End time: 23:56:03 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 23:56:39 on Jan 30,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module pcie_tl
+# ** Error: pcie_tl.sv(141): (vlog-2110) Illegal reference to net "awready_m".
+# ** Error: pcie_tl.sv(145): (vlog-2110) Illegal reference to net "arready_m".
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# End time: 23:56:40 on Jan 30,2025, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:01:53 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 00:01:54 on Jan 31,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file '/home/tools/mentor/MENTOR_SOURCE/QUESTA/questasim/uvm-1.2/linux_x8x_64/uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib /home/tools/mentor/MENTOR_SOURCE/QUESTA/questasim/uvm-1.2/linux_x8x_64/uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 2
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:11:50 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 00:11:50 on Jan 31,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file '/pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi/home/tools/mentor/MENTOR_SOURCE/QUESTA/questasim/uvm-1.2/linux_x8x_64/uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib /pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi/home/tools/mentor/MENTOR_SOURCE/QUESTA/questasim/uvm-1.2/linux_x8x_64/uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 2
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:14:21 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg (uvm-1.1d Built-in)
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 00:14:21 on Jan 31,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file '/pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib /pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 2
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:15:29 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/home/allada/common/Documents/M1" top_tb.sv 
+# ** Error: top_tb.sv(1): Cannot find `include file "uvm_pkg.sv" in directories:
+#     /home/allada/common/Documents/M1, /pkgs/mentor/questa/2021.3_1/questasim/ovm-2.1.2/../verilog_src/ovm-2.1.2/src
+# End time: 00:15:29 on Jan 31,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+# Error in macro ./run.do line 1
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+#     while executing
+# "vlog +incdir+/home/allada/common/Documents/M1 top_tb.sv"
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:52:14 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# ** Warning: top_tb.sv(2): (vlog-13233) Design unit "top_tb_sv_unit" already exists and will be overwritten. Design unit compiled with different set of options.
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 00:52:17 on Jan 31,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 1
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file '/pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib /pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 3
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:55:10 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 00:55:12 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file '/u/allada/Documents/M1/uvm-1.2/src/dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib /u/allada/Documents/M1/uvm-1.2/src/dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 00:56:35 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 00:56:37 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file '/pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib /pkgs/mentor/questa/2021.3_1...m-1.2/linux_x86_64/uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 4
+pwd
+# /home/allada/common/Documents/M1
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# run.do.bak
+# test_lib.sv
+# top_tb.sv
+# top_tb.sv.bak
+# transcript
+# uvm-1.2
+# work
+cd uvm-1.2
+ls
+# bin
+# docs
+# examples
+# LICENSE.txt
+# NOTICE.txt
+# README.txt
+# release-notes.txt
+# src
+# UVM_Reference.html
+cd src
+ls
+# base
+# comps
+# dap
+# deprecated
+# dpi
+# macros
+# reg
+# seq
+# tlm1
+# tlm2
+# uvm_macros.svh
+# uvm_pkg.sv
+# uvm.sv
+vlog -sv dpi/uvm_dpi.cc
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:06:16 on Jan 31,2025
+# vlog -reportprogress 300 -sv dpi/uvm_dpi.cc 
+# -- Compiling DPI/PLI C++ file dpi/uvm_dpi.cc
+# ** Error: (vlog-70) Compilation of the C/C++ src files failed with the error messages given below.
+# 
+# In file included from dpi/uvm_dpi.cc:37:0:
+# dpi/uvm_hdl.c:32:2: error: #error "hdl vendor backend is missing"
+#  #error "hdl vendor backend is missing"
+#   ^~~~~
+# In file included from dpi/uvm_dpi.cc:36:0:
+# dpi/uvm_regex.cc: In function 'int uvm_re_match(const char*, const char*)':
+# dpi/uvm_regex.cc:40:5: warning: no previous declaration for 'int uvm_re_match(const char*, const char*)' [-Wmissing-declarations]
+#  int uvm_re_match(const char * re, const char *str)
+#      ^~~~~~~~~~~~
+# dpi/uvm_regex.cc: In function 'const char* uvm_glob_to_re(const char*)':
+# dpi/uvm_regex.cc:121:14: warning: no previous declaration for 'const char* uvm_glob_to_re(const char*)' [-Wmissing-declarations]
+#  const char * uvm_glob_to_re(const char *glob)
+#               ^~~~~~~~~~~~~~
+# dpi/uvm_regex.cc: In function 'void uvm_dump_re_cache()':
+# dpi/uvm_regex.cc:247:6: warning: no previous declaration for 'void uvm_dump_re_cache()' [-Wmissing-declarations]
+#  void uvm_dump_re_cache()
+#       ^~~~~~~~~~~~~~~~~
+# In file included from dpi/uvm_dpi.cc:38:0:
+# dpi/uvm_svcmd_dpi.c: In function 'void push_data(int, char*, int)':
+# dpi/uvm_svcmd_dpi.c:36:6: warning: no previous declaration for 'void push_data(int, char*, int)' [-Wmissing-declarations]
+#  void push_data(int lvl,char *entry, int cmd) {
+#       ^~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'void walk_level(int, int, char**, int)':
+# dpi/uvm_svcmd_dpi.c:44:6: warning: no previous declaration for 'void walk_level(int, int, char**, int)' [-Wmissing-declarations]
+#  void walk_level(int lvl, int argc, char**argv,int cmd) {
+#       ^~~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'const char* uvm_dpi_get_next_arg_c(int)':
+# dpi/uvm_svcmd_dpi.c:58:13: warning: no previous declaration for 'const char* uvm_dpi_get_next_arg_c(int)' [-Wmissing-declarations]
+#  const char *uvm_dpi_get_next_arg_c (int init) {
+#              ^~~~~~~~~~~~~~~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'char* uvm_dpi_get_tool_name_c()':
+# dpi/uvm_svcmd_dpi.c:84:14: warning: no previous declaration for 'char* uvm_dpi_get_tool_name_c()' [-Wmissing-declarations]
+#  extern char* uvm_dpi_get_tool_name_c ()
+#               ^~~~~~~~~~~~~~~~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'char* uvm_dpi_get_tool_version_c()':
+# dpi/uvm_svcmd_dpi.c:91:14: warning: no previous declaration for 'char* uvm_dpi_get_tool_version_c()' [-Wmissing-declarations]
+#  extern char* uvm_dpi_get_tool_version_c ()
+#               ^~~~~~~~~~~~~~~~~~~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'regex_t* uvm_dpi_regcomp(char*)':
+# dpi/uvm_svcmd_dpi.c:98:17: warning: no previous declaration for 'regex_t* uvm_dpi_regcomp(char*)' [-Wmissing-declarations]
+#  extern regex_t* uvm_dpi_regcomp (char* pattern)
+#                  ^~~~~~~~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'int uvm_dpi_regexec(regex_t*, char*)':
+# dpi/uvm_svcmd_dpi.c:120:12: warning: no previous declaration for 'int uvm_dpi_regexec(regex_t*, char*)' [-Wmissing-declarations]
+#  extern int uvm_dpi_regexec (regex_t* re, char* str)
+#             ^~~~~~~~~~~~~~~
+# dpi/uvm_svcmd_dpi.c: In function 'void uvm_dpi_regfree(regex_t*)':
+# dpi/uvm_svcmd_dpi.c:129:13: warning: no previous declaration for 'void uvm_dpi_regfree(regex_t*)' [-Wmissing-declarations]
+#  extern void uvm_dpi_regfree (regex_t* re)
+#              ^~~~~~~~~~~~~~~
+# 
+# End time: 01:06:17 on Jan 31,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 0
+# /pkgs/mentor/questa/2021.3_1/questasim/linux_x86_64/vlog failed.
+gcc -shared -o uvm_dpi.so dpi/uvm_dpi.o -fPIC
+# gcc: error: dpi/uvm_dpi.o: No such file or directory
+# gcc: fatal error: no input files
+# compilation terminated.
+pwd
+# /home/allada/common/Documents/M1/uvm-1.2/src
+cd ..
+cd ..
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# run.do.bak
+# test_lib.sv
+# top_tb.sv
+# top_tb.sv.bak
+# transcript
+# uvm-1.2
+# work
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:14:15 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:14:17 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file './uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+pwd
+# /home/allada/common/Documents/M1
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:18:46 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:18:48 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# ** Error: (vsim-3763) SystemVerilog DPI cannot access file './uvm_dpi.so'
+# No such file or directory. (errno = ENOENT)
+# Use the -help option for complete vsim usage.
+# vsim -novopt "+define+UVM_NO_DPI" -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:22:00 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:22:02 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# ** Error: (vsim-3033) Instantiation of 'tl_dll_intf' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 10
+#         Searched libraries:
+#             /home/allada/common/Documents/M1/work
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Error: pcie_tl.sv(211): (vlog-2123) Missing argument for format specification '%h'.
+# ** Error: pcie_tl.sv(215): (vlog-2123) Missing argument for format specification '%h'.
+# ** Error: vlog failed.
+# subinvocation of vlog failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for '/home/allada/common/Documents/M1/work.pcie_tl'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:32:01 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:32:03 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# ** Error: (vsim-3033) Instantiation of 'tl_dll_intf' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 11
+#         Searched libraries:
+#             /home/allada/common/Documents/M1/work
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Error: pcie_tl.sv(211): (vlog-2123) Missing argument for format specification '%h'.
+# ** Error: pcie_tl.sv(215): (vlog-2123) Missing argument for format specification '%h'.
+# ** Error: vlog failed.
+# subinvocation of vlog failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for '/home/allada/common/Documents/M1/work.pcie_tl'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:33:24 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:33:26 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Error: pcie_tl.sv(211): (vlog-2123) Missing argument for format specification '%h'.
+# ** Error: pcie_tl.sv(215): (vlog-2123) Missing argument for format specification '%h'.
+# ** Error: vlog failed.
+# subinvocation of vlog failed; return status = 1.
+# ** Error: (vsim-3171) Could not find machine code for '/home/allada/common/Documents/M1/work.pcie_tl'.
+# No such file or directory. (errno = ENOENT)
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:35:33 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:35:35 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (arsize) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 87
+# ** Error: (vsim-3043) Unresolved reference to 'arsize' in axi_m_pif.arsize.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 87
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 68
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 68
+# ** Warning: (vsim-3008) [CNNODP] - Component name (arsize) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 56
+# ** Error: (vsim-3043) Unresolved reference to 'arsize' in axi_p_pif.arsize.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 56
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Error: (vsim-3063) Port 'arsize_p' not found in the connected module (25th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Error: (vsim-3063) Port 'arsize_m' not found in the connected module (53rd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Error: (vsim-3043) Unresolved reference to 'aadr'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 211
+# ** Error: (vsim-3043) Unresolved reference to 'read_register'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 146
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:38:22 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:38:24 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 62.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awlen_p'.
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awvalid_m'.
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awlen_m'.
+# ** Error: (vsim-3043) Unresolved reference to 'aadr'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 211
+# ** Error: (vsim-3043) Unresolved reference to 'read_register'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 146
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 01:45:05 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 01:45:08 on Jan 31,2025, Elapsed time: 0:00:03
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 62.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awlen_p'.
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awvalid_m'.
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awlen_m'.
+# ** Error: (vsim-3043) Unresolved reference to 'read_register'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 146
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:13:04 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:13:06 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Error: (vsim-3043) Unresolved reference to 'read_register'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 146
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:14:15 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:14:17 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 64.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3722) top_tb.sv(29): [TFMPC] - Missing connection for port 'awlen_p'.
+# ** Error: (vsim-3043) Unresolved reference to 'read_register'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 146
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:24:26 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:24:28 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Error: (vsim-3043) Unresolved reference to 'read_register'.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: pcie_tl.sv Line: 146
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:33:34 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:33:36 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:34:38 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:34:40 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:35:20 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:35:22 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:36:32 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:36:34 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 5
+
+wuit
+# invalid command name "wuit"
+quit
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# run.do.bak
+# test_lib.sv
+# tl_dll_intf.sv
+# top_tb.sv
+# top_tb.sv.bak
+# transcript
+# uvm-1.1d
+# uvm-1.2
+# uvm_dpi.so
+# work
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:41:13 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# ** Warning: top_tb.sv(2): (vlog-13233) Design unit "top_tb_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:41:15 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_9352/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 6
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# run.do.bak
+# test_lib.sv
+# tl_dll_intf.sv
+# top_tb.sv
+# top_tb.sv.bak
+# transcript
+# uvm-1.1d
+# uvm-1.2
+# uvm_dpi.so
+# work
+rm work
+# /usr/bin/rm: cannot remove ‘work’: Is a directory
+rm -rf work
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# run.do.bak
+# test_lib.sv
+# tl_dll_intf.sv
+# top_tb.sv
+# top_tb.sv.bak
+# transcript
+# uvm-1.1d
+# uvm-1.2
+# uvm_dpi.so
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:42:00 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:42:01 on Jan 31,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 6
+ls
+# axi_intf.sv
+# pcie_tl.sv
+# run.do
+# run.do.bak
+# test_lib.sv
+# tl_dll_intf.sv
+# top_tb.sv
+# top_tb.sv.bak
+# transcript
+# uvm-1.1d
+# uvm-1.2
+# uvm_dpi.so
+# work
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:42:13 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:42:15 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_m_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 69
+# ** Warning: (vsim-3008) [CNNODP] - Component name (awlen) is not on a downward path.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Error: (vsim-3043) Unresolved reference to 'awlen' in axi_p_pif.awlen.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb File: top_tb.sv Line: 37
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_p'. The port definition is at: pcie_tl.sv(4).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'awlen_m'. The port definition is at: pcie_tl.sv(12).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO ./run.do PAUSED at line 6
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 02:44:14 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 02:44:16 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 00:01:54 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Loading ./uvm_dpi.so
+add wave -position insertpoint sim:/top_tb/*
+add wave -position insertpoint sim:/top_tb/axi_p_pif/*
+add wave -position insertpoint sim:/top_tb/axi_m_pif/*
+add wave -position insertpoint sim:/top_tb/tl_dll_pif/*
+add wave -position insertpoint sim:/top_tb/DUT/write_register/*
+# ** UI-Msg: (vish-4014) No objects found matching '/top_tb/DUT/write_register/*'.
+add wave -position insertpoint sim:/top_tb/DUT/read_register/*
+# ** UI-Msg: (vish-4014) No objects found matching '/top_tb/DUT/read_register/*'.
+add wave -position insertpoint sim:/top_tb/axi_p_pif/*
+add wave -position insertpoint sim:/top_tb/axi_m_pif/*
+add wave -position insertpoint sim:/top_tb/tl_dll_pif/*
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/allada/common/Documents/M1/wave.do
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_WARNING @ 0: reporter [BDTYP] Cannot create a component of type 'pcie_tl_base_test' because it is not registered with the factory.
+# UVM_FATAL @ 0: reporter [INVTST] Requested test from call to run_test(pcie_tl_base_test) not found.
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    0
+# UVM_WARNING :    1
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [BDTYP]     1
+# [INVTST]     1
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh line 292
+run -all
+# UVM_FATAL @ 0: reporter [NOCOMP] No components instantiated. You must either instantiate at least one component before calling run_test or use run_test to do so. To run a test using run_test, use +UVM_TESTNAME or supply the test name in the argument to run_test(). Exiting simulation.
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    0
+# UVM_WARNING :    1
+# UVM_ERROR :    0
+# UVM_FATAL :    2
+# ** Report counts by id
+# [BDTYP]     1
+# [INVTST]     1
+# [NOCOMP]     1
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh line 292
+quit -sim
+# End time: 03:03:27 on Jan 31,2025, Elapsed time: 3:01:33
+# Errors: 50, Warnings: 81
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 03:03:36 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 03:03:38 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 03:03:38 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Loading ./uvm_dpi.so
+do wave.do
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_WARNING @ 0: reporter [BDTYP] Cannot create a component of type 'pcie_tl_base_test' because it is not registered with the factory.
+# UVM_FATAL @ 0: reporter [INVTST] Requested test from call to run_test(pcie_tl_base_test) not found.
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    0
+# UVM_WARNING :    1
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [BDTYP]     1
+# [INVTST]     1
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh line 292
+add wave -position insertpoint sim:/top_tb/axi_m_pif/*
+quit -sim
+# End time: 03:07:43 on Jan 31,2025, Elapsed time: 0:04:05
+# Errors: 0, Warnings: 2
+do wave.do
+# Cannot open macro file: wave.do
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 03:08:03 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 03:08:05 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 03:08:05 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Loading ./uvm_dpi.so
+add wave -position insertpoint sim:/top_tb/axi_p_pif/*
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_WARNING @ 0: reporter [BDTYP] Cannot create a component of type 'pcie_tl_base_test' because it is not registered with the factory.
+# UVM_FATAL @ 0: reporter [INVTST] Requested test from call to run_test(pcie_tl_base_test) not found.
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    0
+# UVM_WARNING :    1
+# UVM_ERROR :    0
+# UVM_FATAL :    1
+# ** Report counts by id
+# [BDTYP]     1
+# [INVTST]     1
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh(292)
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb
+# 1
+# Break in Function uvm_pkg/uvm_report_object::die at /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_report_object.svh line 292
+
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 03:42:19 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 03:42:21 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# End time: 03:42:23 on Jan 31,2025, Elapsed time: 0:34:18
+# Errors: 0, Warnings: 2
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 03:42:23 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Loading ./uvm_dpi.so
+add wave -position insertpoint sim:/top_tb/axi_p_pif/*
+add wave -position insertpoint sim:/top_tb/axi_m_pif/*
+add wave -position insertpoint sim:/top_tb/tl_dll_pif/*
+run -all
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test pcie_tl_base_test...
+# UVM_INFO /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    2
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1 us  Iteration: 54  Instance: /top_tb
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_root.svh line 430
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf /home/allada/common/Documents/M1/wave.do
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 03:46:42 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.1d/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 03:46:44 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 0
+# End time: 03:46:46 on Jan 31,2025, Elapsed time: 0:04:23
+# Errors: 0, Warnings: 2
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 03:46:46 on Jan 31,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Loading ./uvm_dpi.so
+# ----------------------------------------------------------------
+# UVM-1.1d
+# (C) 2007-2013 Mentor Graphics Corporation
+# (C) 2007-2013 Cadence Design Systems, Inc.
+# (C) 2006-2013 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test pcie_tl_base_test...
+# UVM_INFO /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    2
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [TEST_DONE]     1
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_root.svh(430)
+#    Time: 1 us  Iteration: 54  Instance: /top_tb
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /u/allada/Documents/M1/uvm-1.1d/src/base/uvm_root.svh line 430
+do run.do
+# QuestaSim-64 vlog 2021.3_1 Compiler 2021.08 Aug 15 2021
+# Start time: 18:34:51 on Jan 31,2025
+# vlog -reportprogress 300 "+incdir+/u/allada/Documents/M1/uvm-1.2/src" top_tb.sv 
+# -- Compiling package uvm_pkg
+# ** Warning: top_tb.sv(2): (vlog-13233) Design unit "top_tb_sv_unit" already exists and will be overwritten. Overwriting SystemVerilog $unit with different source files.
+# -- Compiling package top_tb_sv_unit
+# -- Importing package uvm_pkg
+# -- Compiling module pcie_tl
+# -- Compiling interface axi_intf
+# -- Compiling interface tl_dll_intf
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 18:34:53 on Jan 31,2025, Elapsed time: 0:00:02
+# Errors: 0, Warnings: 1
+# End time: 18:34:55 on Jan 31,2025, Elapsed time: 14:48:09
+# Errors: 0, Warnings: 2
+# vsim -novopt -suppress 12110 top_tb -sv_lib uvm_dpi "+UVM_TESTNAME=pcie_tl_base_test" 
+# Start time: 18:34:55 on Jan 31,2025
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_17323/linux_x86_64_gcc-7.4.0/export_tramp.so
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# ** Note: (vsim-8785) UVM-aware debugging capabilities will be disabled since no compiled "questa_uvm_pkg" can be found.
+# This also means that later if you turn on UVM-aware debugging your debug simulations may have
+# different random seeds from your non-debug simulations.
+# Refreshing /home/allada/common/Documents/M1/work.top_tb_sv_unit
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing /home/allada/common/Documents/M1/work.uvm_pkg
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.uvm_pkg
+# Loading work.top_tb_sv_unit
+# Loading work.top_tb
+# Refreshing /home/allada/common/Documents/M1/work.axi_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.axi_intf
+# Refreshing /home/allada/common/Documents/M1/work.tl_dll_intf
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.tl_dll_intf
+# Refreshing /home/allada/common/Documents/M1/work.pcie_tl
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.pcie_tl
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'DUT'.  Expected 66, found 65.
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/DUT File: top_tb.sv Line: 29
+# Compiling /tmp/allada@mo.ece.pdx.edu_dpi_17323/linux_x86_64_gcc-7.4.0/exportwrapper.c
+# Loading /tmp/allada@mo.ece.pdx.edu_dpi_17323/linux_x86_64_gcc-7.4.0/vsim_auto_compile.so
+# Loading ./uvm_dpi.so
+# UVM_INFO /u/allada/Documents/M1/uvm-1.2/src/base/uvm_root.svh(392) @ 0: reporter [UVM/RELNOTES] 
+# ----------------------------------------------------------------
+# UVM-1.2
+# (C) 2007-2014 Mentor Graphics Corporation
+# (C) 2007-2014 Cadence Design Systems, Inc.
+# (C) 2006-2014 Synopsys, Inc.
+# (C) 2011-2013 Cypress Semiconductor Corp.
+# (C) 2013-2014 NVIDIA Corporation
+# ----------------------------------------------------------------
+# 
+#   ***********       IMPORTANT RELEASE NOTES         ************
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_NO_DEPRECATED undefined.
+#   See http://www.eda.org/svdb/view.php?id=3313 for more details.
+# 
+#   You are using a version of the UVM library that has been compiled
+#   with `UVM_OBJECT_DO_NOT_NEED_CONSTRUCTOR undefined.
+#   See http://www.eda.org/svdb/view.php?id=3770 for more details.
+# 
+#       (Specify +UVM_NO_RELNOTES to turn off this notice)
+# 
+# UVM_INFO @ 0: reporter [RNTST] Running test pcie_tl_base_test...
+# UVM_INFO /u/allada/Documents/M1/uvm-1.2/src/base/uvm_objection.svh(1270) @ 1000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO /u/allada/Documents/M1/uvm-1.2/src/base/uvm_report_server.svh(847) @ 1000: reporter [UVM/REPORT/SERVER] 
+# --- UVM Report Summary ---
+# 
+# ** Report counts by severity
+# UVM_INFO :    3
+# UVM_WARNING :    0
+# UVM_ERROR :    0
+# UVM_FATAL :    0
+# ** Report counts by id
+# [RNTST]     1
+# [TEST_DONE]     1
+# [UVM/RELNOTES]     1
+# 
+# ** Note: $finish    : /u/allada/Documents/M1/uvm-1.2/src/base/uvm_root.svh(517)
+#    Time: 1 us  Iteration: 68  Instance: /top_tb
+# 1
+# Break in Task uvm_pkg/uvm_root::run_test at /u/allada/Documents/M1/uvm-1.2/src/base/uvm_root.svh line 517
