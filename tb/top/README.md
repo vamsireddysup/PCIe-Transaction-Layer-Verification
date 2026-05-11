@@ -1,70 +1,51 @@
-# tb/top — Environment, Tests, Top Testbench
+# tb/top/ — Environment, Tests, Top Testbench
 
 ---
 
 ## Files
 
-| File | Description |
+| File | What it does |
 |------|-------------|
-| `pcie_common.sv` | Shared defines, typedefs, `pcie_common` class, `dll_cfg_rx` class |
-| `pcie_tl_env.sv` | UVM environment (extends `uvm_env`) |
-| `test_lib.sv`    | `pcie_tl_base_test` and `pcie_wr_rd_test` |
-| `top_tb.sv`      | Module: clock/reset gen, interface instantiation, DUT bind, `run_test` |
+| `pcie_common.sv` | Defines, typedefs, `pcie_common` class, `dll_cfg_rx` class |
+| `pcie_tl_env.sv` | UVM environment — creates and connects all agents and scoreboard |
+| `test_lib.sv` | Base test and `pcie_wr_rd_test` |
+| `top_tb.sv` | Top module: clocks, resets, interfaces, DUT, `run_test()` |
 
 ---
 
-## `top_tb.sv` — Key Responsibilities
+## `top_tb.sv` checklist
 
-1. Generate `aclk` (period = 1ns, `#0.5`) and `tl_dll_clk` (same)
-2. Generate `arst` (assert 2 cycles, then deassert)
-3. Instantiate `axi_intf axi_p_pif(aclk, arst)` — processor side
-4. Instantiate `axi_intf axi_m_pif(aclk, arst)` — memory side
-5. Instantiate `tl_dll_intf tl_dll_pif(tl_dll_clk, arst)`
-6. Set virtual interfaces into resource DB:
-   ```sv
-   uvm_resource_db#(virtual axi_intf)::set("AXI","VIF", axi_p_pif, null);
-   uvm_resource_db#(virtual axi_intf)::set("AXI","MIF", axi_m_pif, null);
-   uvm_resource_db#(virtual tl_dll_intf)::set("DLL","VIF", tl_dll_pif, null);
-   ```
-7. Instantiate and connect DUT (`pcie_tl dut(...)`)
-8. Call `dll_cfg_rx::vip_cfg_as_ep()` and `run_test("pcie_wr_rd_test")`
-9. Always block to mirror DUT FSM state into `pcie_common::pcie_tl_dll_state`
+Things I need to make sure are in here:
+
+- [ ] `aclk` and `tl_dll_clk` generation (`#0.5` half-period = 1 GHz)
+- [ ] `arst` asserted for 2 cycles then deasserted
+- [ ] `axi_intf axi_p_pif(aclk, arst)` and `axi_intf axi_m_pif(aclk, arst)`
+- [ ] `tl_dll_intf tl_dll_pif(tl_dll_clk, arst)`
+- [ ] Resource DB sets for all three interfaces
+- [ ] DUT instantiation with all ports connected to the right interface
+- [ ] `dll_cfg_rx::vip_cfg_as_ep()` called before `run_test()`
+- [ ] `run_test("pcie_wr_rd_test")`
+- [ ] Always block mirroring `dut.n_state_dll` into `pcie_common::pcie_tl_dll_state`
+- [ ] `$dumpfile` / `$dumpvars` for waveform
 
 ---
 
-## `pcie_tl_env.sv` — Common Mistakes
+## `pcie_tl_env.sv` — what not to do
 
-- **Extends `uvm_env`** (not `uvm_test`)
-- **Do not** add a `#1000` timeout in `run_phase` — let the test own objections
-- **Do** instantiate `mem_agent_i` (it is missing in the reference version — Bug #5)
-- **Do** instantiate `tl_sbd_i` and connect all `ap_port` → `analysis_export`
-
----
-
-## `test_lib.sv` — `pcie_wr_rd_test` Flow
-
-```
-run_phase:
-  1. dma_load_seq.start(env.axi_agent_i.sqr)    // load TX/RX descriptors
-  2. config_seq.start(env.axi_agent_i.sqr)       // configure registers, kick link training
-  3. dll_link_seq.start(env.dll_rx_agent_i.sqr)  // assert linkup=1
-  4. dll_vc_seq.start(env.dll_rx_agent_i.sqr)    // assert dll_vc_up=8'hFF
-  5. fork
-       dll_cpl.start(...)   // runs forever, drives CplD for each incoming CFG_RD
-     join_none
-  6. drop_objection          // simulation ends after drain_time
-```
+- Do **not** extend `uvm_test` — extend `uvm_env`
+- Do **not** add a `#1000` timeout in `run_phase` — the env shouldn't manage objections
+- Do **not** forget `mem_agent_i` — it's missing in the reference (Bug #3)
 
 ---
 
-## Include Order in `top_tb.sv`
+## `include` order in `top_tb.sv`
 
-The order matters for forward declarations:
+Order matters — use this:
 
 ```sv
 `include "uvm_pkg.sv"
 import uvm_pkg::*;
-`include "pcie_common.sv"    // defines + classes (no semicolon!)
+`include "pcie_common.sv"
 `include "axi_intf.sv"
 `include "tl_dll_intf.sv"
 `include "axi_tx.sv"
@@ -85,5 +66,7 @@ import uvm_pkg::*;
 `include "tl_sbd.sv"
 `include "pcie_tl_env.sv"
 `include "test_lib.sv"
-`include "pcie_tl.sv"        // DUT last
+`include "pcie_tl.sv"
 ```
+
+No semicolons after `include` lines — some simulators reject them.

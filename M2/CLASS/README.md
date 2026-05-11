@@ -1,6 +1,5 @@
-# M2/CLASS — (Optional)
+# M2/CLASS/
 
-If you want to practice UVM agent structure in isolation without running the full sim,  
-use this directory to experiment with stub implementations.
+Optional scratch space for Week 2. I used this to prototype agent structure before doing it properly in UVM.
 
-Most M2 work belongs in `M2/UVM/`.
+Most of the Week 2 work is in `M2/UVM/`.

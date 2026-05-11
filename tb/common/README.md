@@ -1,65 +1,51 @@
-# tb/common — Shared Definitions
+# tb/common/ — Shared Definitions
 
-Files in this directory are included first by `top_tb.sv`.
+These files get included first in `top_tb.sv`. Everything else depends on them.
 
 ---
 
 ## `pcie_common.sv`
 
-A static class used as a **shared blackboard** between the DLL TX responder and the DLL RX driver.
+A static class used as a shared blackboard across all UVM components.  
+The DLL TX responder writes to it as it parses outgoing TLPs.  
+The DLL RX sequences read from it to build the right completion response.
 
-### Why static?
-The `dll_tx_responder` parses TLP fields from what the DUT sends.  
-The `dll_cpl_seq` / `dll_rx_drv` needs to know what TLP was received  
-to build a matching completion. Static variables are visible across all class instances.
+Static variables because class instances can't see each other's state — but they can all see `pcie_common::`.
 
-### Key fields
+Key fields:
 
-| Field | Set by | Read by |
-|-------|--------|---------|
-| `pcie_tl_dll_state` | `top_tb` (always block) | debug |
+| Field | Who writes | Who reads |
+|-------|-----------|-----------|
 | `rcvd_tlp` | `dll_tx_responder` | `dll_item` constraints |
 | `transmit_tlp` | `dll_tx_responder` | `dll_cpl_seq` |
-| `rcvd_tlp_count` | `dll_tx_responder` | `dll_cpl_seq` (event trigger) |
-| `fmt`, `type_t`, `tag`, `tc` | `dll_tx_responder` | `dll_item` constraints |
-| `requester_*/target_*` | `dll_tx_responder` | `dll_item` constraints |
-| `num_tx_matches` etc. | scoreboard | `report_phase` |
+| `rcvd_tlp_count` | `dll_tx_responder` | `dll_cpl_seq` (triggers on change) |
+| `fmt`, `type_t`, `tag`, `tc` | `dll_tx_responder` | `dll_item` |
+| `requester_*`, `target_*` | `dll_tx_responder` | `dll_item` |
+| `num_tx_matches`, etc. | scoreboard | `report_phase` |
+| `pcie_tl_dll_state` | `top_tb` always block | debug |
 
-### Defines (``define`)
-
-| Define | Value | Meaning |
-|--------|-------|---------|
-| `` `CFG_RD0 `` | `3'b000` | CFG Read Type 0 index |
-| `` `CFG_WR0 `` | `3'b010` | CFG Write Type 0 index |
-| `` `MEM_WR ``  | `5'b0_0001` | tlp_transfer_config_reg value for Mem Write |
-| `` `MEM_RD ``  | `5'b0_0010` | tlp_transfer_config_reg value for Mem Read |
-| `` `ENDPOINT `` | `32'h0` | target_device_type value |
-| `` `SWITCH ``   | `32'h1` | target_device_type value |
-| `` `PAYLOAD_SIZE `` | `256` | Default max payload in bytes |
-| `` `NEW_COMP `` | macro | Boilerplate `new(name, parent)` for components |
-| `` `NEW_OBJ ``  | macro | Boilerplate `new(name="")` for objects |
+Also defines all the `` `define `` macros (TLP types, FMT values, `ENDPOINT`, `SWITCH`, `PAYLOAD_SIZE`, `NEW_COMP`, `NEW_OBJ`).
 
 ---
 
 ## `dll_cfg_rx`
 
-A static class that holds the configuration space registers of the **endpoint device** being enumerated.
+Another static class. Holds the PCIe Type 0 Configuration Space registers of the endpoint being enumerated. Call `dll_cfg_rx::vip_cfg_as_ep()` at the start of simulation in `top_tb`.
 
-Call `dll_cfg_rx::vip_cfg_as_ep()` once at the start of simulation  
-(from `top_tb` initial block) to populate default values.
+When the DUT sends a CFG_RD for register N, the `dll_item.post_randomize()` looks up `dll_cfg_rx::` to fill `payloadQ[0]` with the right data.
 
-Register layout matches PCIe Type 0 Configuration Space Header:
+Register layout:
 
-| reg_num | Register |
+| reg_num | Content |
 |---------|---------|
-| 0  | Device ID + Vendor ID |
-| 1  | Status + Command |
-| 2  | Class Code + Revision ID |
-| 3  | BIST + Header Type + Latency Timer + Cache Line Size |
+| 0 | `{device_id, vendor_id}` |
+| 1 | `{status, command}` |
+| 2 | `{class_code, revision_id}` |
+| 3 | `{bist, header_type, latency_timer, cache_line_size}` |
 | 4–9 | BAR0–BAR5 |
-| 10 | Cardbus CIS Pointer |
-| 11 | Subsystem ID + Subsystem Vendor ID |
-| 12 | Expansion ROM Base Address |
-| 13 | Capability Pointer |
-| 14 | Reserved |
-| 15 | Max Lat + Min Gnt + Interrupt Pin + Interrupt Line |
+| 10 | cardbus_cis_pointer |
+| 11 | `{subsystem_id, subsystem_vendor_id}` |
+| 12 | expansion_rom_base_addr |
+| 13 | `{24'h0, capability_pointer}` |
+| 14 | reserved, return 0 |
+| 15 | `{max_lat, min_gnt, interrupt_pin, interrupt_line}` |

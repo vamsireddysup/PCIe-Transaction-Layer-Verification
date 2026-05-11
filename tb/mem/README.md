@@ -1,56 +1,46 @@
-# tb/mem — Memory Model
+# tb/mem/ — Memory Model
 
-A behavioral memory model that acts as the AXI4 slave on the **memory side** of the DUT.
+A behavioral AXI4 slave that acts as the memory connected to the DUT's memory-side interface.  
+1 MB, initialized with random data at simulation start. Base address: `0x8000_0000`.
 
 ---
 
 ## Files
 
-| File | Week | Description |
-|------|------|-------------|
-| `mem_agent.sv` | M2 | Contains `memory`, `mem_mon`, `mem_agent` classes |
+| File | What it does |
+|------|-------------|
+| `mem_agent.sv` | Contains `memory`, `mem_mon`, and `mem_agent` all in one file |
 
 ---
 
-## `memory` — The AXI4 Slave
+## `memory` — AXI4 slave behavior
 
-A 1 MB memory initialized with random data at simulation start.  
-Base address: `0x8000_0000`.
+```
+awvalid=1  → assert awready, latch address
+wvalid=1   → write wdata into mem[], increment address
+wlast=1    → send write response (bvalid=1, bresp=OKAY)
+arvalid=1  → assert arready, latch read address
+           → drive rdata/rvalid/rlast for each burst beat
+```
 
-### Behavior
-- When `awvalid=1` → assert `awready=1`, latch address
-- When `wvalid=1` → accept data into `mem[]` array, track address
-- When `wlast=1` → send write response (`bvalid=1`, `bresp=OKAY`)
-- When `arvalid=1` → assert `arready=1`, latch read address
-- Drive `rdata`, `rvalid`, `rlast` for each beat of the burst
-
-### Resource DB Key
+Gets its interface via:
 ```sv
 uvm_resource_db#(virtual axi_intf)::read_by_name("AXI", "MIF", vif, this);
 ```
 
 ---
 
-## `mem_mon` — Monitors Memory Transactions
+## `mem_mon` — memory-side observer
 
-Observes the AXI memory interface and publishes completed `axi_tx` objects.  
-Subscribe the scoreboard to this monitor's `ap_port` in Week 5.
+Monitors the DUT's memory AXI interface and publishes completed `axi_tx` objects.  
+Has an `ignore_first_dw_f` flag — the first DW of a DMA payload coming from the DUT is a descriptor header, not actual data, so the monitor skips it.
 
-**Note:** There is an `ignore_first_dw_f` flag in `mem_mon`.  
-The first DW of the DMA payload from the DUT is a descriptor header word,  
-not actual payload data. The monitor skips it.
+Connect `mon.ap_port` to `tl_sbd_i.axi_fifo.analysis_export` in Week 5.
 
 ---
 
-## `mem_agent` — The Agent
+## `mem_agent`
 
-```sv
-class mem_agent extends uvm_agent;  // (not uvm_test!)
-  memory mem;
-  mem_mon mon;
-  // build_phase: create both
-endclass
-```
+Extends `uvm_agent` (not `uvm_test`). Creates `memory` and `mem_mon` in `build_phase`.
 
-Instantiate `mem_agent_i` in `pcie_tl_env` and connect  
-`mon.ap_port` to `tl_sbd_i.axi_fifo.analysis_export` in `connect_phase`.
+This agent is not instantiated in the reference implementation (Bug #3). Fix it in Week 5.

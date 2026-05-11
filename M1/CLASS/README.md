@@ -1,17 +1,17 @@
-# M1/CLASS — Class-Based Testbench
+# M1/CLASS/
 
-Write your **non-UVM** SystemVerilog testbench here.
+My plain SystemVerilog testbench from Week 1. No UVM.
 
-See [`M1/README.md`](../README.md) for the full challenge spec and timing diagrams.
+See [M1/README.md](../README.md) for what I was trying to verify and the AXI timing diagrams.
 
-## Files to create
+## Files I created here
 
-- `axi_intf.sv` — AXI4 interface
-- `tl_dll_intf.sv` — DLL interface
-- `pcie_tl_drv.sv` — Plain class with AXI write/read tasks
-- `top_tb.sv` — Top module
+- `axi_intf.sv`
+- `tl_dll_intf.sv`
+- `pcie_tl_drv.sv`
+- `top_tb.sv`
 
-## Run
+## How to run
 
 ```bash
 vlog -sv +incdir+. axi_intf.sv tl_dll_intf.sv ../../design/pcie_tl.sv top_tb.sv

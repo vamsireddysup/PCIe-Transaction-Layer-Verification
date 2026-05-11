@@ -1,23 +1,22 @@
-# M5/UVM — Scoreboard & Test Closure
+# M5/UVM/
 
-Implement the scoreboard, fix all bugs, achieve TEST PASSED.
+Week 5 — scoreboard, all bugs fixed, TEST PASSED.
 
-See [`M5/README.md`](../README.md) for the complete bug fix checklist and scoreboard spec.
+See [M5/README.md](../README.md) for the full bug fix checklist and scoreboard spec.
 
-## New files to create this week
+## New files this week
 
-- `tl_sbd.sv` — `tl_sbd extends uvm_scoreboard`
+- `tl_sbd.sv` — scoreboard extending `uvm_scoreboard`
 
-## Files to fix this week
+## Bugs fixed this week
 
-| File | Bug |
-|------|-----|
-| `test_lib.sv` | PASS condition always false (num_tx_rx_matches vs num_tx_rx_mismatches) |
-| `design/pcie_tl.sv` | requester_function_num used as device_num in CFG TLP header |
-| `pcie_tl_env.sv` | mem_agent never instantiated |
-| `dll_item.sv` | CplD payload hardcoded to 32'h1234_5678 |
-| `dll_tx_responder.sv` | pop_front before push_back in S_TLP_PAYLOAD |
-| `dll_tx_mon.sv` | First TLP DW silently dropped |
+- [ ] `test_lib.sv:30` — impossible PASS condition
+- [ ] `design/pcie_tl.sv:564` — wrong requester ID field
+- [ ] `pcie_tl_env.sv` — mem_agent not instantiated
+- [ ] `dll_item.sv:88` — hardcoded CplD payload
+- [ ] `dll_tx_responder.sv` — pop before push
+- [ ] `dll_tx_mon.sv:31` — first DW dropped
+- [ ] All agents — wrong base class
 
 ## Final run
 

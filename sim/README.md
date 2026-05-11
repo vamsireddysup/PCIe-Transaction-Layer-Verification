@@ -1,23 +1,26 @@
-# sim — Simulation Scripts
+# sim/ — Simulation Scripts
+
+Run everything from this directory.
 
 ---
 
-## Questa/ModelSim
+## Questa / ModelSim
 
 ```bash
-make questa                    # compile + simulate pcie_wr_rd_test
-make questa TEST=pcie_tl_base_test  # run a specific test
-make wave                      # open waveform after simulation
-make clean                     # remove work library and logs
+make questa                               # compile + run pcie_wr_rd_test
+make questa TEST=pcie_tl_base_test        # run a different test
+make wave                                 # open waveform after run
+make clean                                # delete work lib and logs
 ```
 
-## VCS (Synopsys)
+## VCS
 
 ```bash
 make vcs
+make vcs TEST=pcie_tl_base_test
 ```
 
-## Xcelium (Cadence)
+## Xcelium
 
 ```bash
 make xcelium
@@ -25,10 +28,10 @@ make xcelium
 
 ---
 
-## Log Files
+## Log files
 
-| File | Description |
-|------|-------------|
-| `transcript` | Full Questa simulation log |
-| `dump.vcd`   | VCD waveform (open with GTKWave or Questa) |
-| `*.log`      | Named test logs |
+| File | What it is |
+|------|-----------|
+| `transcript` | Questa full log |
+| `dump.vcd` | Waveform (open with GTKWave or Questa) |
+| `*.log` | Named per-test logs with timestamp |

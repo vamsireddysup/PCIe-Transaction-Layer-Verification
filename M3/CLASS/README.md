@@ -1,3 +1,3 @@
-# M3/CLASS — (Optional)
+# M3/CLASS/
 
-Use this space to sketch out sequence logic in plain classes before porting to UVM sequences.
+Scratch space for Week 3. Used to sketch out sequence logic before writing it in UVM.

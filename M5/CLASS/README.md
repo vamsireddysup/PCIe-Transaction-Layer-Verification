@@ -1,3 +1,3 @@
-# M5/CLASS — (Optional)
+# M5/CLASS/
 
-Use this space for scratch work: sketching scoreboard logic, bug analysis notes, etc.
+Scratch space for Week 5. Used for bug analysis notes and scoreboard sketching before integrating.

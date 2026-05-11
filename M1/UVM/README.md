@@ -1,15 +1,15 @@
-# M1/UVM — UVM Skeleton (Preview)
+# M1/UVM/
 
-This week, just get UVM compiling and a base test running.
+Just a stub this week. The goal was to get UVM compiling and a base test running.
 
-## Minimal files to create
+The full UVM build is in M2.
+
+## Files I created here
 
 - `top_tb.sv` — calls `run_test("pcie_tl_base_test")`
-- `test_lib.sv` — `pcie_tl_base_test` that raises/drops objection after `#1000`
+- `test_lib.sv` — base test that raises/drops objection after `#1000`
 
-You will fill in the full UVM structure in Week 2 (M2).
-
-## Run
+## How to run
 
 ```bash
 vlog -sv +incdir+. +incdir+../../Packages/uvm-1.2/src \

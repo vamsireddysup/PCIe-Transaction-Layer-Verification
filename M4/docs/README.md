@@ -1,6 +1,6 @@
-# M4/docs — Week 4 Documentation
+# M4/docs/
 
-Save your Week 4 outputs here:
-- Coverage report (HTML or text dump from `vcover`)
-- List of uncovered bins and what new sequences you wrote to cover them
-- Any SVA violations you found (even if you deliberately introduced them for testing)
+Save Week 4 outputs here:
+- Coverage report (text or HTML from `vcover`)
+- List of uncovered bins and what I did to hit them
+- SVA violations I caught (even deliberate ones I injected for testing)

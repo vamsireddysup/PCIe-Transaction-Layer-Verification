@@ -1,118 +1,108 @@
-# Week 1 — M1: Design Exploration & Class-Based Testbench
+# Week 1 — Design Exploration & Class-Based Testbench
 
-**Goal:** Understand the DUT architecture, AXI protocol, and write a plain SystemVerilog  
-(non-UVM) testbench that performs basic register writes and reads.
-
----
-
-## What to Study This Week
-
-1. **PCIe TL Block Diagram** — `docs/PCIe TL Block Diagram.jpg`
-2. **Design Specification** — `docs/ece593w25-DesignSpec_PCIe_Transaction_Layer.pdf`
-3. **Verification Plan** — `docs/ece593w25-FunctionVerificationTestPlan_PCIe_Transaction_Layer.pdf`
-4. **AXI4 Protocol** — `Reference_Docs/AMBA_AXI_Protocol_Specification.pdf` (Chapters 2–4)
-5. **DUT source** — `design/pcie_tl.sv` (read every line; understand the FSM and register map)
+This week is about understanding the DUT before writing any serious testbench code. I read the spec, traced the FSM, and wrote a plain SystemVerilog testbench to drive AXI transactions and check the register map works.
 
 ---
 
-## Learning Objectives
+## What I studied
 
-- Understand AXI4 write channel: `awvalid/awready` → `wvalid/wready` → `bvalid/bready`
-- Understand AXI4 read channel: `arvalid/arready` → `rvalid/rready`
-- Know the DUT register map (`0x1000` – `0x101C`, `0x2000` – `0x2FFF`)
-- Understand what the AXI FSM does in `S_REG_WRITE_ADDR` → `S_REG_WRITE_DATA` → `S_REG_WRITE_RESP`
-- Trace `init_link_training` flag: what sets it, what reacts to it
+- `docs/PCIe TL Block Diagram.jpg` — got a picture of what connects to what
+- `docs/ece593w25-DesignSpec_PCIe_Transaction_Layer.pdf` — read the register map and signal descriptions
+- `docs/ece593w25-FunctionVerificationTestPlan_PCIe_Transaction_Layer.pdf` — what needs to be verified
+- `design/pcie_tl.sv` — read every line of the FSM before writing any TB code
+- AXI spec chapters 2–4 — write channel, read channel, handshaking rules
 
 ---
 
-## CLASS/ — What to Implement
+## Things I needed to understand before starting
 
-Work in the `M1/CLASS/` directory. You are writing **plain SystemVerilog** (no UVM).
+**AXI write flow:**
+1. Assert `awvalid` + `awaddr`. Wait for `awready` from DUT.
+2. Assert `wvalid` + `wdata`. Wait for `wready`. Assert `wlast` on last beat.
+3. Wait for `bvalid` from DUT. Assert `bready`. Transaction done.
 
-### Files to create
+**AXI read flow:**
+1. Assert `arvalid` + `araddr`. Wait for `arready` from DUT.
+2. Wait for `rvalid` from DUT. Assert `rready`. Read `rdata`. Check `rlast`.
+
+**The key flag:** Writing `1` to bit[0] of `link_control_reg` (`0x1004`) sets `init_link_training=1` internally. That's what kicks the DLL FSM out of `S_IDLE_DLL`.
+
+---
+
+## CLASS/ — What I built
+
+No UVM. Just plain SystemVerilog classes with tasks.
 
 | File | What it does |
 |------|-------------|
-| `axi_intf.sv` | AXI4 interface with two clocking blocks (`bfm_cb` for driver, `mon_cb` for monitor) |
-| `tl_dll_intf.sv` | DLL TX/RX interface (just needs signals + monitor clocking block this week) |
-| `top_tb.sv` | Top-level module: clock/reset gen, interface instances, DUT instantiation |
-| `axi_drv_class.sv` | A plain class with tasks: `write_addr()`, `write_data()`, `write_resp()`, `read_addr()`, `read_data()` |
-| `axi_test.sv` | A class that creates the driver and runs test scenarios |
+| `axi_intf.sv` | AXI4 interface — two clocking blocks, one for driving (`bfm_cb`), one for monitoring (`mon_cb`) |
+| `tl_dll_intf.sv` | DLL interface — just signals + `mon_cb` this week |
+| `pcie_tl_drv.sv` | Class with tasks: `write_addr()`, `write_data()`, `write_resp()`, `read_addr()`, `read_data()` |
+| `top_tb.sv` | Clock gen, reset, interface instances, DUT, test scenarios |
 
-### Test scenarios to drive
+### Test scenarios I ran
 
-1. **Write** to `tc_vc_mapping_reg` (addr=`0x1000`) with data `0xDEAD_BEEF`
-2. **Read back** from `0x1000` — check rdata_p equals what you wrote
-3. **Write** to `ep_bar0_base_addr` (addr=`0x100C`) with `0xEC00_0000`
-4. **Write** to `max_payload_size` (addr=`0x1018`) with `256`
-5. **Write** to `link_control_reg` (addr=`0x1004`) with `0x1` — this triggers link training
+1. Write `0xDEAD_BEEF` to `tc_vc_mapping_reg` (`0x1000`), read it back
+2. Write `0xEC00_0000` to `ep_bar0_base_addr` (`0x100C`)
+3. Write `256` to `max_payload_size` (`0x1018`)
+4. Write `0x1` to `link_control_reg` (`0x1004`) — should trigger link training
+5. Read `vc_fc_status_reg` (`0x1008`) — should come back `0xFFFFFFFF` after reset
 
-### Success criteria
+### What I was checking
 
-- `$display` or waveform shows correct `rdata_p` on read-back
-- No simulation hang (proper `awready`/`wready`/`bvalid` handshake)
-- See DUT FSM move from `S_IDLE_AXI` → `S_REG_WRITE_ADDR` → `S_REG_WRITE_DATA` → `S_REG_WRITE_RESP`
-- After writing `link_control_reg[0]=1`, the DLL FSM transitions to `S_LINK_TRAINING`
-
----
-
-## UVM/ — Preview (optional this week)
-
-If you finish early, look at `M1/UVM/test_lib.sv` — it calls `run_test("pcie_tl_base_test")`.  
-Start reading UVM Chapter 1–2 of the User Guide in `Reference_Docs/`.  
-You will build a proper UVM version in Week 2.
+- Does `awready` actually go high when `awvalid` is asserted?
+- Does `rdata` match what I wrote?
+- Does the FSM leave `S_IDLE_AXI` and come back after a write completes?
+- Does `init_link_training` get set after writing `link_control_reg[0]=1`?
 
 ---
 
-## AXI Write Timing Diagram
+## UVM/ — Just getting it to compile
 
-```
-         ___     ___     ___     ___     ___
-aclk  __|   |___|   |___|   |___|   |___|   |__
-
-          ┌───────────────┐
-awvalid   │               │
-──────────┘               └─────────────────────
-
-                    ┌──────┐
-awready             │      │
-────────────────────┘      └────────────────────
-         ^-- DUT asserts awready when it sees awvalid
-
-                           ┌───────────────┐
-wvalid                     │               │
-───────────────────────────┘               └────
-                                    ┌──────┐
-wready                              │      │
-────────────────────────────────────┘      └────
-```
+This week I only created a minimal UVM stub — `top_tb.sv` calling `run_test()` and a `pcie_tl_base_test` that raises and drops an objection after `#1000`. The actual UVM work starts in Week 2.
 
 ---
 
-## AXI Read Timing Diagram
+## AXI timing reference
 
+Write:
 ```
-         ___     ___     ___     ___     ___
-aclk  __|   |___|   |___|   |___|   |___|   |__
+clk   __|‾|_|‾|_|‾|_|‾|_|‾|_
+          ┌───┐
+awvalid   │   │
+──────────┘   └─────────────
+                  ┌──┐
+awready           │  │
+──────────────────┘  └──────
+                       ┌───┐
+wvalid                 │   │
+───────────────────────┘   └
+                         ┌─┐
+wready                   │ │
+─────────────────────────┘ └
+```
 
-          ┌───────────────┐
-arvalid   │               │
-──────────┘               └─────────────────────
-                    ┌──────┐
-arready             │      │
-────────────────────┘      └────────────────────
-                                  ┌──────┐
-rvalid                            │      │
-──────────────────────────────────┘      └──────
-rdata                             [valid data]
-                                  ┌──────┐
-rready                            │      │
-──────────────────────────────────┘      └──────
+Read:
+```
+clk   __|‾|_|‾|_|‾|_|‾|_|‾|_
+          ┌───┐
+arvalid   │   │
+──────────┘   └─────────────
+                  ┌──┐
+arready           │  │
+──────────────────┘  └──────
+                         ┌─┐
+rvalid                   │ │
+─────────────────────────┘ └
+rdata                    [D]
+                         ┌─┐
+rready                   │ │
+─────────────────────────┘ └
 ```
 
 ---
 
-## Run Instructions (Questa)
+## How to run
 
 ```bash
 cd M1/CLASS
@@ -122,10 +112,9 @@ vsim -c top_tb -do "run -all; quit"
 
 ---
 
-## Deliverables
+## Done when
 
-- [ ] Simulation runs without errors
-- [ ] Waveform screenshot saved to `M1/docs/`
-- [ ] Transcript saved to `M1/docs/transcript`
-- [ ] All 5 test scenarios complete successfully
-- [ ] Brief notes: what was confusing, what surprised you
+- [ ] Read-back values match what was written
+- [ ] No sim hangs waiting for ready signals
+- [ ] FSM transitions visible in waveform
+- [ ] Transcript saved to `M1/docs/`

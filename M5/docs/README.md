@@ -1,8 +1,9 @@
-# M5/docs — Week 5 Final Documentation
+# M5/docs/
 
-Save your final outputs here:
+Final outputs from Week 5.
+
 - `final_run.log` — simulation log showing TEST PASSED
 - Final waveform screenshot
 - Final coverage report
-- Bug fix diff summary (what you changed and why)
-- Reflection: what was the hardest part? what would you do differently?
+- Summary of what I changed and why for each bug
+- Reflection: hardest part, what I'd do differently

@@ -1,17 +1,18 @@
-# M3/UVM — Sequences & Full Stimulus
+# M3/UVM/
 
-Build on your M2 agents. Add sequence libraries and run the full enumeration flow.
+Week 3 — sequence libraries on top of the M2 agents.
 
-See [`M3/README.md`](../README.md) for the complete sequence specifications.
+See [M3/README.md](../README.md) for sequence specs and the full DUT flow walkthrough.
 
-## New files to create this week
+## New files this week
 
 - `axi_seq_lib.sv` — `axi_base_seq`, `axi_config_seq`, `axi_dma_descr_load_seq`
 - `dll_rx_seq_lib.sv` — `dll_linkup_indicate_seq`, `dll_vc_up_indicate_seq`, `dll_cpl_seq`
-- Update `test_lib.sv` — add `pcie_wr_rd_test`
+- Updated `test_lib.sv` — added `pcie_wr_rd_test`
 
-## Run
+## How to run
 
 ```bash
-vsim -c top_tb +UVM_TESTNAME=pcie_wr_rd_test +UVM_VERBOSITY=UVM_LOW -do "run -all; quit"
+vsim -c top_tb +UVM_TESTNAME=pcie_wr_rd_test +UVM_VERBOSITY=UVM_LOW \
+     -do "run -all; quit"
 ```

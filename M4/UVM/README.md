@@ -1,20 +1,20 @@
-# M4/UVM — Coverage & Assertions
+# M4/UVM/
 
-Add coverage and SVA to your M3 testbench.
+Week 4 — coverage and assertions added to the M3 testbench.
 
-See [`M4/README.md`](../README.md) for covergroup specs and SVA property templates.
+See [M4/README.md](../README.md) for covergroup specs and SVA property templates.
 
-## New files to create this week
+## New files this week
 
-- `axi_cov.sv` — `tl_axi_cg` covergroup  
-- `dll_rx_cov.sv` — `dll_rx_cg` covergroup
-- `dll_tx_cov.sv` — `dll_tx_cg` covergroup (new file)
-- `axi_assertions.sv` — SVA property module
+- `axi_cov.sv` — `tl_axi_cg` with payload size, address, and write/read coverage
+- `dll_rx_cov.sv` — `dll_rx_cg` TLP type coverage
+- `dll_tx_cov.sv` — `dll_tx_cg` outgoing TLP type coverage (new, not in reference)
+- `axi_assertions.sv` — SVA properties for AXI and DLL TX protocols
 
-## Run with coverage
+## How to run with coverage
 
 ```bash
-vsim -c top_tb +UVM_TESTNAME=pcie_wr_rd_test \
-     -coverage -do "coverage save -onexit cov.ucdb; run -all; quit"
+vsim -c top_tb +UVM_TESTNAME=pcie_wr_rd_test -coverage \
+     -do "coverage save -onexit cov.ucdb; run -all; quit"
 vcover report cov.ucdb -details
 ```

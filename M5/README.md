@@ -1,216 +1,186 @@
-# Week 5 — M5: Scoreboard, Bug Fixes & Test Closure
+# Week 5 — Scoreboard and Bug Fixes
 
-**Goal:** Implement the scoreboard, fix all known bugs, wire the complete  
-environment, and achieve a **TEST PASSED** result with meaningful match counts.
-
----
-
-## What to Study This Week
-
-1. **UVM User Guide** — Chapter 10 (scoreboards, TLM FIFOs)
-2. Review the **Known Bugs** table in the root `README.md`
-3. Study `tb/sbd/tl_sbd.sv` skeleton — understand what it needs to check
-4. Understand `uvm_tlm_analysis_fifo` — how to buffer transactions for comparison
+Final week. I'm implementing the scoreboard, fixing all 7 known bugs, and getting a clean TEST PASSED result with real match counts in the report.
 
 ---
 
-## Learning Objectives
+## What I studied
 
-- Implement a `uvm_scoreboard` that connects to multiple monitors
-- Use `uvm_tlm_analysis_fifo` to decouple producer (monitor) and consumer (scoreboard)
-- Understand how to match TX (AXI write) transactions to RX (memory) transactions
-- Understand the PASS/FAIL reporting pattern in `report_phase`
-- Practice reading simulation logs to diagnose failures
+- UVM User Guide chapter 10: scoreboards, `uvm_tlm_analysis_fifo`
+- Traced every bug from the code review — understood the root cause before touching any code
 
 ---
 
-## UVM/ — What to Implement
+## Bug fix checklist
 
-Work in `M5/UVM/`. This is your final, complete testbench.
-
----
-
-### Scoreboard (`tl_sbd.sv`)
-
-```
-class tl_sbd extends uvm_scoreboard;
-
-  uvm_tlm_analysis_fifo #(axi_tx)  axi_fifo;    // from axi_mon
-  uvm_tlm_analysis_fifo #(dll_item) tx_tlp_fifo; // from dll_tx_mon
-  uvm_tlm_analysis_fifo #(dll_item) rx_tlp_fifo; // from dll_rx_mon
-
-  `uvm_component_utils(tl_sbd)
-
-  function void build_phase(uvm_phase phase);
-    axi_fifo    = new("axi_fifo",    this);
-    tx_tlp_fifo = new("tx_tlp_fifo", this);
-    rx_tlp_fifo = new("rx_tlp_fifo", this);
-  endfunction
-
-  // Connections (in pcie_tl_env connect_phase):
-  //   axi_agent_i.mon.ap_port      → tl_sbd_i.axi_fifo.analysis_export
-  //   dll_tx_agent_i.mon.ap_port   → tl_sbd_i.tx_tlp_fifo.analysis_export
-  //   dll_rx_agent_i.mon.ap_port   → tl_sbd_i.rx_tlp_fifo.analysis_export
-
-  task run_phase(uvm_phase phase);
-    fork
-      check_tx_tlps();   // verify DUT sends correct TLPs for given AXI commands
-      check_rx_tlps();   // verify CplD payload matches dll_cfg_rx config data
-    join
-  endtask
-
-  task check_tx_tlps();
-    // For each CFG_RD0 TLP in tx_tlp_fifo:
-    //   Verify FMT/TYPE encoding is correct
-    //   Verify tag matches pcie_common::tag
-    //   Verify target B/D/F matches what was configured
-    //   Increment pcie_common::num_tx_matches or num_tx_mismatches
-  endtask
-
-  task check_rx_tlps();
-    // For each CplD TLP in rx_tlp_fifo:
-    //   Compare payloadQ[0] against expected value from dll_cfg_rx::mem[reg_num]
-    //   Increment pcie_common::num_rx_matches or num_rx_mismatches
-  endtask
-
-endclass
-```
+Work through these one at a time. Check each off after testing.
 
 ---
 
-### Bug Fix Checklist
+### Bug 1 — `test_lib.sv:30` — PASS condition impossible
 
-Fix each of the following before running M5. Check them off as you go.
-
-#### Bug 1 — `test_lib.sv:30` — PASS condition always false
 ```sv
-// Current (WRONG): num_tx_rx_matches > 0 && num_tx_rx_matches == 0  ← contradiction
-// Fix: change the second part to check mismatches
+// What it says now (always false — can't be >0 AND ==0 at the same time):
+(pcie_common::num_tx_rx_matches > 0 && pcie_common::num_tx_rx_matches == 0)
+
+// What it should say:
 (pcie_common::num_tx_rx_matches > 0 && pcie_common::num_tx_rx_mismatches == 0)
 ```
+This one bug means the test can never pass, no matter what else is working.
 
-#### Bug 2 — `design/pcie_tl.sv:564` — Wrong requester ID field
+---
+
+### Bug 2 — `design/pcie_tl.sv:564` — Wrong requester ID field
+
 ```sv
-// Current (WRONG):
+// Wrong (device_num used twice):
 header[1][31:16] = {requester_bus_num, requester_device_num, requester_device_num};
-// Fix:
+
+// Correct:
 header[1][31:16] = {requester_bus_num, requester_device_num, requester_function_num};
 ```
+Every CFG TLP sent by the DUT has a malformed requester ID until this is fixed.
 
-#### Bug 3 — `tb/top/pcie_tl_env.sv` — mem_agent not instantiated
+---
+
+### Bug 3 — `pcie_tl_env.sv` — `mem_agent` never created
+
+In `build_phase`, add:
 ```sv
-// Add to build_phase:
 mem_agent_i = mem_agent::type_id::create("mem_agent_i", this);
-// And connect in connect_phase:
-mem_agent_i.mon.ap_port.connect(tl_sbd_i.axi_fifo.analysis_export);
-//   (or whichever fifo is appropriate)
 ```
+And in `connect_phase` wire its monitor's `ap_port` to the scoreboard.
 
-#### Bug 4 — `dll_item.sv:88` — Hardcoded CplD payload
+---
+
+### Bug 4 — `dll_item.sv:88` — Hardcoded CplD payload
+
+Remove this line from `header_c`:
 ```sv
-// Current (WRONG):
-payloadQ[0] == 32'h1234_5678
-// Remove this line from header_c constraint.
-// The post_randomize() already fills payloadQ[0] correctly from dll_cfg_rx.
+payloadQ[0] == 32'h1234_5678   // delete this
 ```
+`post_randomize()` already sets `payloadQ[0]` correctly from `dll_cfg_rx`. The constraint was overriding it with a fixed value.
 
-#### Bug 5 — `tb/dll/dll_tx_responder.sv` — pop before push in S_TLP_PAYLOAD
-```sv
-// Reorder: push first, then pop on the next clock cycle.
-// One fix: use a separate 'first_payload_beat' flag to delay the pop by one beat.
-```
+---
 
-#### Bug 6 — `tb/dll/dll_tx_mon.sv:31` — First DW silently dropped
+### Bug 5 — `dll_tx_responder.sv` — Pop before push in `S_TLP_PAYLOAD`
+
 ```sv
-// dw_count starts at 0. The check 'if (dw_count == 1)' skips DW index 0.
-// Fix: change to 'if (dw_count == 0)' and update subsequent indices accordingly.
-// Or initialize dw_count to 0 and change the check logic to match.
+// Current order (wrong): pops from empty queue on first beat
+if (...) pcie_common::ep_bar0_base_addr = payloadQ.pop_front();
+count++;
+payloadQ.push_back(vif.tx_data_o);   // pushed after the pop
+
+// Fix: push first, process on the next beat (use a one-cycle delay or reorder)
+payloadQ.push_back(vif.tx_data_o);
+if (count > 0 && ...) pcie_common::ep_bar0_base_addr = payloadQ.pop_front();
+count++;
 ```
 
 ---
 
-### Complete `pcie_tl_env.sv`
+### Bug 6 — `dll_tx_mon.sv:31` — First TLP DW dropped
 
+```sv
+// dw_count starts at 0. Currently captures starting at dw_count==1, skipping DW0.
+if (dw_count == 1) begin   // this skips dw_count==0, losing FMT/TYPE DW
+
+// Fix: start capture at dw_count==0
+if (dw_count == 0) begin
+  tx = new();
+  tx.headerQ.push_back(vif.mon_cb.tx_data_o);
+  // parse fmt and type here
+end
+if (dw_count == 1) tx.headerQ.push_back(...);
+if (dw_count == 2) tx.headerQ.push_back(...);
+if (dw_count >= 3) tx.payloadQ.push_back(...);
 ```
-class pcie_tl_env extends uvm_env;
 
-  axi_agent     axi_agent_i;
-  dll_tx_agent  dll_tx_agent_i;
-  dll_rx_agent  dll_rx_agent_i;
-  mem_agent     mem_agent_i;
-  tl_sbd        tl_sbd_i;
+---
 
-  // build_phase: create all above
-  // connect_phase:
+### Bug 7 — All agents extend `uvm_test` instead of `uvm_agent`/`uvm_env`
+
+| File | Change |
+|------|--------|
+| `axi_agent.sv` | `extends uvm_agent` |
+| `dll_rx_agent.sv` | `extends uvm_agent` |
+| `dll_tx_agent.sv` | `extends uvm_agent` |
+| `mem_agent.sv` | `extends uvm_agent` |
+| `pcie_tl_env.sv` | `extends uvm_env` |
+
+---
+
+## Scoreboard — `tl_sbd.sv`
+
+```sv
+class tl_sbd extends uvm_scoreboard;
+
+  uvm_tlm_analysis_fifo #(axi_tx)   axi_fifo;
+  uvm_tlm_analysis_fifo #(dll_item) tx_tlp_fifo;
+  uvm_tlm_analysis_fifo #(dll_item) rx_tlp_fifo;
+
+  // build_phase: new all three fifos
+
+  // connect_phase (in env):
   //   axi_agent_i.mon.ap_port    → tl_sbd_i.axi_fifo.analysis_export
   //   dll_tx_agent_i.mon.ap_port → tl_sbd_i.tx_tlp_fifo.analysis_export
   //   dll_rx_agent_i.mon.ap_port → tl_sbd_i.rx_tlp_fifo.analysis_export
 
-  // DO NOT add a run_phase timeout here
-endclass
+  task run_phase(uvm_phase phase);
+    fork
+      check_tx_tlps();
+      check_rx_tlps();
+    join
+  endtask
 ```
+
+**`check_tx_tlps()`** — verify what the DUT sends out
+- Pull from `tx_tlp_fifo`
+- Check FMT/TYPE encoding matches expected TLP type
+- Check requester ID fields are correct
+- Check `packet_len` is 0 for CFG_RD, 1 for CFG_WR
+- Increment `pcie_common::num_tx_matches` or `num_tx_mismatches`
+
+**`check_rx_tlps()`** — verify the completion payloads are correct
+- Pull from `rx_tlp_fifo`
+- Compare `payloadQ[0]` against the matching `dll_cfg_rx` register value for that `reg_num`
+- Increment `pcie_common::num_rx_matches` or `num_rx_mismatches`
 
 ---
 
-### `report_phase` in `pcie_tl_base_test`
-
-After fixing Bug 1, the report logic should be:
-
-```sv
-function void report_phase(uvm_phase phase);
-  if (pcie_common::num_tx_matches > 0       && pcie_common::num_tx_mismatches == 0 &&
-      pcie_common::num_rx_matches > 0       && pcie_common::num_rx_mismatches == 0 &&
-      pcie_common::num_tx_rx_matches > 0    && pcie_common::num_tx_rx_mismatches == 0) begin
-    `uvm_info("STATUS", "TEST PASSED", UVM_NONE)
-  end else begin
-    `uvm_error("STATUS", "TEST FAILED")
-    // print all counters
-  end
-endfunction
-```
-
----
-
-## Expected Simulation Log (passing)
+## What a passing run looks like
 
 ```
-UVM_INFO @ 0: reporter [UVMTOP] UVM testbench topology:
-...
+# UVM_INFO ... [UVMTOP] UVM testbench topology:
+# ...
 # AXI_WR: write_addr
 # AXI_WR: write_data
-# AXI_WR: write_resp
-...
-# Performing write to Register at addr=00001004
+# ...
 # =================== Driving CplD ============ 1
-# Inside dll_rx_drv
-# tlp_first_dw = 000000c4
-# fmt = 000, type = 00100
-...
 # =================== Driving CplD ============ 16
-# UVM_INFO ... [STATUS] TEST PASSED
-# UVM_INFO ... [STATUS] num_tx_matches=16
-# UVM_INFO ... [STATUS] num_rx_matches=16
-# UVM_INFO ... [STATUS] num_tx_rx_matches=16
+# UVM_INFO test_lib.sv @ 1005: [STATUS] TEST PASSED
+# UVM_INFO test_lib.sv @ 1005: [STATUS] num_tx_matches=16
+# UVM_INFO test_lib.sv @ 1005: [STATUS] num_rx_matches=16
+# UVM_INFO test_lib.sv @ 1005: [STATUS] num_tx_rx_matches=16
+# UVM_ERROR :    0
+# UVM_FATAL :    0
 ```
 
 ---
 
-## Final Deliverables
+## Stretch goals
 
-- [ ] All 7 bugs fixed (checked off in the Bug Fix Checklist above)
-- [ ] Simulation log shows `TEST PASSED`
-- [ ] `num_tx_matches`, `num_rx_matches`, `num_tx_rx_matches` all > 0
-- [ ] `num_*_mismatches` all == 0
-- [ ] Coverage report shows >80% on all covergroups
-- [ ] No `UVM_ERROR` or `UVM_FATAL` messages
-- [ ] Final waveform saved to `M5/docs/`
-- [ ] Final transcript saved to `M5/docs/`
+- Implement `S_MEM_WR` in `design/pcie_tl.sv` and add a test for it
+- Implement `dll_cfg_rx::vip_cfg_as_switch()` and test with `target_device_type=SWITCH`
+- Add a negative test: corrupt the TLP header and confirm the DUT hits `S_ENUM_ERROR`
 
 ---
 
-## Stretch Goals (if time allows)
+## Done when
 
-- Implement `S_MEM_WR` in the DUT and verify a full DMA write transfer end-to-end
-- Add a memory read-back sequence that reads via `S_MEM_RD` and verifies data integrity
-- Implement `dll_cfg_rx::vip_cfg_as_switch()` and test with `target_device_type=SWITCH`
-- Add a negative test: drive a malformed TLP and verify the DUT enters `S_ENUM_ERROR`
+- [ ] All 7 bugs fixed
+- [ ] Simulation log shows `TEST PASSED`
+- [ ] All match counters > 0, all mismatch counters == 0
+- [ ] No `UVM_ERROR` or `UVM_FATAL`
+- [ ] Final transcript saved to `M5/docs/`
+- [ ] Final coverage report saved to `M5/docs/`

@@ -1,3 +1,3 @@
-# M4/CLASS — (Optional)
+# M4/CLASS/
 
-Use this space to write standalone SVA property experiments before integrating them.
+Scratch space for Week 4. I used this to test SVA properties in isolation before adding them to the full testbench.

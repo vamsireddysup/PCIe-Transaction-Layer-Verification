@@ -1,6 +1,6 @@
-# M2/docs — Week 2 Documentation
+# M2/docs/
 
-Save your Week 2 outputs here:
-- UVM topology printout (from `uvm_top.print_topology()`)
+Save Week 2 outputs here:
+- UVM topology printout
 - Simulation transcript
-- Notes on bugs you hit and how you fixed them
+- Notes on bugs I hit

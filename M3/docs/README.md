@@ -1,6 +1,6 @@
-# M3/docs — Week 3 Documentation
+# M3/docs/
 
-Save your Week 3 outputs here:
-- Simulation transcript showing all 16 CFG_RD TLPs and their CplD responses
-- Notes on how `pcie_common` shared state works between the responder and sequences
-- Any waveform screenshots of the enumeration flow
+Save Week 3 outputs here:
+- Transcript showing all 16 CFG_RD TLPs and their CplD responses
+- Notes on how `pcie_common` shared state worked in practice
+- Anything confusing about the CplD constraint/post_randomize interaction
