@@ -4,3 +4,7 @@ transcript
 vsim.wlf
 *.pb
 *.ucdb
+*.vstf
+*.vcd
+*.wlf
+modelsim.ini

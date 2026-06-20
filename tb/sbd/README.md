@@ -1,67 +1,29 @@
-# tb/sbd/ — Scoreboard
+# tb/sbd
 
-Verifies end-to-end correctness. Three things to check:
-1. TLPs the DUT sends out have correct header fields
-2. Completion payloads match the endpoint's actual register values
-3. Every CFG_RD has exactly one matching CplD returned
+The scoreboard, tl_sbd.sv.
 
----
+## what it does
 
-## Files
+Four analysis imps, one per monitor: imp_dll_tx (outgoing tlps), imp_dll_rx
+(incoming tlps), imp_proc (proc-side axi, currently collected but unused), imp_mem
+(memory-side axi). Each write_* function breaks 32-bit words into 4 bytes and
+pushes them into per-path queues, since axi data and tlp payload do not always
+line up at word granularity.
 
-| File | Week |
-|------|------|
-| `tl_sbd.sv` | M5 |
+Three compare loops run forever in parallel under a fork. Each waits until both
+its queues have a byte, pops one from each side, and bumps a match or mismatch
+counter:
 
----
+- mem_rd vs tlp_tx : memory read data should match what went out as a tlp.
+- mem_wr vs tlp_rx : memory write data should match the incoming completion tlp.
+- tlp_tx vs tlp_rx : loopback sanity, the tx and rx payload should match.
 
-## Structure
+## current state
 
-```sv
-class tl_sbd extends uvm_scoreboard;
+All wiring verified correct. The failures are upstream in the DUT (see root README
+and sim/errors.md section 12): two compares get no data because the DUT paths that
+would feed them are stubbed or not firing, and the loopback compare runs but the
+payload is byte-misaligned (255 of 256 mismatch).
 
-  uvm_tlm_analysis_fifo #(axi_tx)   axi_fifo;    // from mem_mon
-  uvm_tlm_analysis_fifo #(dll_item) tx_tlp_fifo; // from dll_tx_mon
-  uvm_tlm_analysis_fifo #(dll_item) rx_tlp_fifo; // from dll_rx_mon
-
-  task run_phase;
-    fork
-      check_tx_tlps();
-      check_rx_tlps();
-    join
-  endtask
-```
-
----
-
-## What each checker does
-
-**`check_tx_tlps()`** — pulls from `tx_tlp_fifo`
-- For each CFG_RD: verify FMT=`000`, TYPE=`00100`, packet_len=0
-- For each CFG_WR: verify FMT=`010`, TYPE=`00100`, packet_len=1
-- Check requester ID fields match configured values
-- Increment `pcie_common::num_tx_matches` or `num_tx_mismatches`
-
-**`check_rx_tlps()`** — pulls from `rx_tlp_fifo`
-- For each CplD: look up `dll_cfg_rx` register value for `pcie_common::reg_num`
-- Compare against `payloadQ[0]`
-- Increment `pcie_common::num_rx_matches` or `num_rx_mismatches`
-
----
-
-## Counters (all in `pcie_common`)
-
-| Counter | Meaning |
-|---------|---------|
-| `num_tx_matches` | DUT TX TLPs with correct fields |
-| `num_tx_mismatches` | DUT TX TLPs with wrong fields |
-| `num_rx_matches` | CplD payloads that matched expected register data |
-| `num_rx_mismatches` | CplD payloads that didn't match |
-| `num_tx_rx_matches` | CFG_RDs that got a correct completion back |
-| `num_tx_rx_mismatches` | CFG_RDs with no or wrong completion |
-
----
-
-## Known bug in `test_lib.sv`
-
-The `report_phase` PASS condition has a typo — it checks `num_tx_rx_matches == 0` instead of `num_tx_rx_mismatches == 0`. So the pass branch is logically impossible. Fix this in Week 5.
+The pass/fail decision is in the test's report_phase, not here. The scoreboard
+only collects and counts.

@@ -1,48 +1,25 @@
-# tb/ — My UVM Testbench
+# tb
 
-This is where I build the verification environment week by week. Each subdirectory has a README explaining what goes in it and what I need to implement.
+Testbench root. Holds the top module, the shared common file, and the subdirs
+for interfaces, agents, sequences, scoreboard, env, and tests.
 
-Don't copy from the reference — build it from scratch using the milestone READMEs as a guide.
+## top_tb.sv
 
----
+The top module. Generates a single 10ns / 100MHz clock that drives both the AXI
+clock and the dll clock, holds reset high for 5 cycles, instantiates the DUT and
+the interfaces, and sets the virtual interfaces into the uvm_resource_db so the
+agents can pull them. Also runs run_test().
 
-## Component hierarchy
+It carries one important line: the mirror that publishes the DUT's dll fsm state
+into pcie_common::pcie_tl_dll_state. This has to live here (not in the DUT)
+because pcie_common is a class included by two separate compilation units, so the
+DUT and the tb each get their own copy of the static. Driving the mirror from
+top_tb keeps the write in the same unit as the copy the sequences read.
 
-```
-pcie_wr_rd_test  (uvm_test)
-  └── env  (pcie_tl_env)                    uvm_env
-        ├── axi_agent_i  (axi_agent)         uvm_agent
-        │     ├── drv  (axi_drv)
-        │     ├── sqr  (uvm_sequencer)
-        │     ├── mon  (axi_mon)  ──→ ap_port
-        │     └── cov  (axi_cov) ←── analysis_export
-        │
-        ├── dll_tx_agent_i  (dll_tx_agent)   uvm_agent
-        │     ├── responder  (dll_tx_responder)
-        │     └── mon        (dll_tx_mon) ──→ ap_port
-        │
-        ├── dll_rx_agent_i  (dll_rx_agent)   uvm_agent
-        │     ├── drv  (dll_rx_drv)
-        │     ├── sqr  (uvm_sequencer)
-        │     ├── mon  (dll_rx_mon) ──→ ap_port
-        │     └── cov  (dll_rx_cov) ←── analysis_export
-        │
-        ├── mem_agent_i  (mem_agent)          uvm_agent
-        │     ├── mem  (memory)
-        │     └── mon  (mem_mon) ──→ ap_port
-        │
-        └── tl_sbd_i  (tl_sbd)               uvm_scoreboard
-              ├── axi_fifo    ←── axi_mon.ap_port
-              ├── tx_tlp_fifo ←── dll_tx_mon.ap_port
-              └── rx_tlp_fifo ←── dll_rx_mon.ap_port
-```
+## pcie_common.sv
 
----
-
-## Interface → resource DB keys
-
-| Interface | Key | Set by | Used by |
-|-----------|-----|--------|---------|
-| `axi_intf` proc side | `"AXI"`, `"VIF"` | `top_tb` | `axi_drv`, `axi_mon` |
-| `axi_intf` mem side  | `"AXI"`, `"MIF"` | `top_tb` | `memory`, `mem_mon` |
-| `tl_dll_intf`        | `"DLL"`, `"VIF"` | `top_tb` | `dll_rx_drv`, `dll_tx_responder`, both monitors |
+Shared between the design and tb sides. Holds the NEW_COMP / NEW_OBJ macros, the
+burst-type and tlp enums, tlp fmt/type encodings, the ep config constants, and
+the static vars the tb and DUT use to sync (pcie_tl_dll_state, transmit_tlp,
+rcvd_tlp_count, and the scoreboard match/mismatch counters). Guarded with ifndef
+so it is safe to include from both sides.
