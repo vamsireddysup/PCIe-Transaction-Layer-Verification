@@ -69,6 +69,15 @@ QuestaSim 2024.2 with UVM 1.1d. Set UVM_HOME to the 1.1d src (not 1.2). From rep
 To examine DUT internal signals (optimized away by default), add
 -voptargs=+acc -suppress 3839 to the vsim command.
 
+## architecture docs
+
+`docs/architecture.html` is a self-contained architecture and verification dossier:
+seven hand-drawn diagrams (system context, the three DUT FSM lanes, the state_dll
+state machine, the UVM topology, an end-to-end sequence diagram, the scoreboard
+data flow, and the compilation-unit static bug), a per-file map of all 38 sources,
+the phase-by-phase flow, and a section of open defects found by re-reading the
+committed code. Open it in a browser.
+
 ## layout
 
     design/    the DUT
