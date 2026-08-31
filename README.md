@@ -72,11 +72,20 @@ To examine DUT internal signals (optimized away by default), add
 ## architecture docs
 
 `docs/architecture.html` is a self-contained architecture and verification dossier:
-seven hand-drawn diagrams (system context, the three DUT FSM lanes, the state_dll
-state machine, the UVM topology, an end-to-end sequence diagram, the scoreboard
-data flow, and the compilation-unit static bug), a per-file map of all 38 sources,
-the phase-by-phase flow, and a section of open defects found by re-reading the
-committed code. Open it in a browser.
+seven diagrams, a per-file map of all 38 sources, the phase-by-phase flow, the ten
+bring-up bugs, and a section of open defects found by re-reading the committed code.
+Open it in a browser. The diagrams are also in `docs/diagrams/` as PNGs so they
+render on GitHub:
+
+| | |
+| --- | --- |
+| [System context](docs/diagrams/fig1-system-context.png) | three buses, and which side masters each |
+| [DUT FSM lanes](docs/diagrams/fig2-dut-fsm-lanes.png) | the three concurrent FSMs and the shared variables between them |
+| [state_dll](docs/diagrams/fig3-state-dll-fsm.png) | link train, VC init, the 16x enum loop, MEM_WR / MEM_RD dispatch |
+| [UVM topology](docs/diagrams/fig4-uvm-topology.png) | hierarchy, vif plumbing, analysis-port connections |
+| [End-to-end sequence](docs/diagrams/fig5-end-to-end-sequence.png) | 20 steps across 6 lifelines with time anchors |
+| [Scoreboard data flow](docs/diagrams/fig6-scoreboard-dataflow.png) | four monitors, three compares, and where two of them starve |
+| [Compilation-unit trap](docs/diagrams/fig7-compilation-unit-trap.png) | why the pcie_common static existed twice (bug #9) |
 
 ## layout
 
